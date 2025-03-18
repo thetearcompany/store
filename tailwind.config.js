@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      scale: {
+        '102': '1.02',
+      },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         serif: ["Merriweather", "serif"],

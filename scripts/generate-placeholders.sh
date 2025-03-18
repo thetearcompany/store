@@ -2,6 +2,9 @@
 
 # Lista produktów
 products=(
+  "vegetables"
+  "bread"
+  "seafood"
   "tomatoes"
   "apples"
   "carrots"
@@ -23,6 +26,9 @@ products=(
   "raisins"
   "almonds"
 )
+
+# Kopiowanie pattern-light.svg jako PNG
+cp public/pattern-light.svg public/pattern-light.png
 
 # Tworzenie kopii placeholdera dla każdego produktu
 for product in "${products[@]}"

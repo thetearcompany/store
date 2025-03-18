@@ -21,33 +21,28 @@ interface ProductCardProps {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="header-holy">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-serif font-bold text-amber-800 text-shadow-holy">
+      <header className="sticky top-0 z-50">
+        <div className="glass-navbar hover:bg-white/80 hover:backdrop-blur-[12px] container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-amber-700 hover:text-amber-800 transition-colors">
             Adonai
           </Link>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/category/vegetables" className="nav-link">
-              <Leaf className="inline-block w-4 h-4 mr-1" />
-              Warzywa i owoce
+          <div className="hidden md:flex items-center space-x-6">
+            <Link href="/category/vegetables" className="nav-link hover:text-amber-800">
+              Warzywa
             </Link>
-            <Link href="/category/dairy" className="nav-link">
-              <Wheat className="inline-block w-4 h-4 mr-1" />
-              Nabiał
+            <Link href="/category/fruits" className="nav-link hover:text-amber-800">
+              Owoce
             </Link>
-            <Link href="/category/bread" className="nav-link">
-              <Wheat className="inline-block w-4 h-4 mr-1" />
+            <Link href="/category/bread" className="nav-link hover:text-amber-800">
               Pieczywo
             </Link>
-            <Link href="/category/sweet" className="nav-link">
-              <Heart className="inline-block w-4 h-4 mr-1" />
-              Słodkie dary
+            <Link href="/category/dairy" className="nav-link hover:text-amber-800">
+              Nabiał
             </Link>
-            <Link href="/category/other" className="nav-link">
-              <Fish className="inline-block w-4 h-4 mr-1" />
-              Inne dary
+            <Link href="/category/seafood" className="nav-link hover:text-amber-800">
+              Owoce morza
             </Link>
-          </nav>
+          </div>
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="icon" className="text-amber-800 hover:bg-amber-50/80 transition-colors">
               <User className="h-5 w-5" />
@@ -379,49 +374,50 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer-holy">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-gradient-to-r from-amber-900 to-amber-800 text-amber-100 py-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/pattern-light.png')] opacity-5"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-serif font-bold mb-4">Adonai</h3>
+              <h3 className="text-2xl font-serif font-bold mb-4">Adonai</h3>
               <p className="text-amber-200">
                 Twój sklep z naturalnymi produktami, gdzie jakość spotyka się z duchowością.
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Kategorie</h4>
-              <ul className="space-y-2">
-                <li><Link href="/category/vegetables" className="text-amber-200 hover:text-white transition-colors">Warzywa</Link></li>
-                <li><Link href="/category/fruits" className="text-amber-200 hover:text-white transition-colors">Owoce</Link></li>
-                <li><Link href="/category/bread" className="text-amber-200 hover:text-white transition-colors">Pieczywo</Link></li>
-                <li><Link href="/category/seafood" className="text-amber-200 hover:text-white transition-colors">Owoce morza</Link></li>
-              </ul>
+              <h3 className="text-xl font-serif font-bold mb-4">Kontakt</h3>
+              <p className="text-amber-200">ul. Przykładowa 123</p>
+              <p className="text-amber-200">00-000 Warszawa</p>
+              <p className="text-amber-200">kontakt@adonai.pl</p>
+              <p className="text-amber-200">+48 123 456 789</p>
             </div>
             <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Informacje</h4>
+              <h3 className="text-xl font-serif font-bold mb-4">Informacje</h3>
               <ul className="space-y-2">
-                <li><Link href="/about" className="text-amber-200 hover:text-white transition-colors">O nas</Link></li>
-                <li><Link href="/contact" className="text-amber-200 hover:text-white transition-colors">Kontakt</Link></li>
-                <li><Link href="/delivery" className="text-amber-200 hover:text-white transition-colors">Dostawa</Link></li>
-                <li><Link href="/terms" className="text-amber-200 hover:text-white transition-colors">Regulamin</Link></li>
+                <li>
+                  <Link href="#" className="text-amber-200 hover:text-white transition-colors duration-300">
+                    O nas
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-amber-200 hover:text-white transition-colors duration-300">
+                    Dostawa
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-amber-200 hover:text-white transition-colors duration-300">
+                    Polityka prywatności
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-amber-200 hover:text-white transition-colors duration-300">
+                    Regulamin
+                  </Link>
+                </li>
               </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Newsletter</h4>
-              <p className="text-amber-200 mb-4">Zapisz się, aby otrzymywać informacje o nowych produktach i promocjach.</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Twój email"
-                  className="flex-1 px-4 py-2 rounded-l-md bg-amber-800 border border-amber-700 text-white placeholder-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-                <button className="px-4 py-2 bg-amber-500 text-white rounded-r-md hover:bg-amber-600 transition-colors">
-                  Zapisz się
-                </button>
-              </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-amber-800 text-center text-amber-200">
+          <div className="mt-8 pt-8 border-t border-amber-800/50 text-center text-amber-200">
             <p>&copy; 2024 Adonai. Wszystkie prawa zastrzeżone.</p>
           </div>
         </div>
@@ -432,27 +428,27 @@ export default function Home() {
 
 function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="product-card group">
+    <div className="product-card group hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] hover:bg-white/70 hover:backdrop-blur-[16px] hover:scale-[1.02]">
       <div className="product-image-container">
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-        <div className="absolute top-2 left-2 product-badge badge-origin">{product.origin}</div>
-        <div className="absolute top-2 right-2 product-badge badge-freshness">{product.freshness}</div>
+        <div className="absolute top-2 left-2 glass-content px-2 py-1 text-xs text-amber-900 animate-content-pulse hover:bg-white/50 hover:backdrop-blur-[12px] hover:border-white/30 hover:shadow-md">{product.origin}</div>
+        <div className="absolute top-2 right-2 glass-content px-2 py-1 text-xs text-amber-900 animate-content-pulse hover:bg-white/50 hover:backdrop-blur-[12px] hover:border-white/30 hover:shadow-md">{product.freshness}</div>
       </div>
-      <div className="p-4">
+      <div className="product-content hover:bg-white/70 hover:backdrop-blur-[16px]">
         <h3 className="product-title">{product.name}</h3>
         <div className="flex items-center justify-between">
           <span className="product-price">{product.price}</span>
-          <Button variant="outline" size="icon" className="text-amber-700 hover:text-amber-800 hover:bg-amber-50">
+          <Button variant="outline" size="icon" className="text-amber-700 hover:text-amber-800 hover:bg-amber-50/50 glass-content animate-content-pulse hover:bg-white/50 hover:backdrop-blur-[12px] hover:border-white/30 hover:shadow-md">
             <Heart className="h-5 w-5" />
           </Button>
         </div>
-        <Button className="btn-sacred w-full mt-4">
+        <Button className="btn-sacred w-full mt-4 glass-content hover:bg-white/50 hover:backdrop-blur-[12px] hover:border-white/30 hover:shadow-md">
           Dodaj do koszyka
         </Button>
       </div>
